@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | UI/UX Designer</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Smooth Scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== Navigation ===== -->
+  <header class="navbar">
+    <div class="logo">JAY</div>
+    <nav class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="contact-btn">Let’s Talk</a>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="intro">Hello, I'm</p>
+      <h1><span>Jay Silvosa</span></h1>
+      <h2>UI UX Designer / Video Editor</h2>
+      <p class="description">
+        We denounce with righteous indignation dislikes demoralized by the charms of pleasure.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Hire Me</a>
+        <a href="resume.pdf" class="btn-outline" download>Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="j.jpg" alt="Profile Photo">
+    </div>
+
+    <div class="stats">
+      <div><h3>3+</h3><p>Years of Experience</p></div>
+      <div><h3>100+</h3><p>Projects Completed</p></div>
+      <div><h3>99%</h3><p>Client Satisfaction</p></div>
+    </div>
+  </section>
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I’m a professional UI/UX designer and video editor passionate about crafting digital experiences that delight users.</p>
+  </section>
+
+  <!-- ===== Services Section ===== -->
+  <section id="services" class="services">
+    <h2>My Services</h2>
+    <div class="service-boxes">
+      <div class="service-card">
+        <h3>UI/UX Design</h3>
+        <p>Beautiful, user-friendly interfaces and digital experiences for web and mobile.</p>
+      </div>
+      <div class="service-card">
+        <h3>Video Editing</h3>
+        <p>Professional storytelling through visuals, motion, and transitions.</p>
+      </div>
+      <div class="service-card">
+        <h3>Brand Identity</h3>
+        <p>Logos and branding systems that represent your business perfectly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section id="projects" class="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-gallery">
+      <div class="project-item">Project 1</div>
+      <div class="project-item">Project 2</div>
+      <div class="project-item">Project 3</div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact" class="contact">
+    <h2>Let’s Work Together!</h2>
+    <p>Feel free to reach out for collaborations or just to say hello 👋</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 Jay Silvosa. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ===== Script ===== -->
+  <script>
+    // Highlight active link as you scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
